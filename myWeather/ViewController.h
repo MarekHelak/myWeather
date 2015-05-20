@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    NSString *city;
+    NSInteger daysNumber;
+    NSArray *weatherDays;
+}
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+-(void)getURLForCityToParseJSON:(NSString*)cityName for:(NSInteger)days;
 
 @end
 
